@@ -1,6 +1,11 @@
 package com.example.goods;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -14,8 +19,6 @@ public class Goods implements Serializable {
     private String name;
     /* 商品价格 */
     private BigDecimal price;
-    /* 商品库存 */
-    private int stock;
     /* 商品描述 */
     private String introduce;
 
@@ -44,10 +47,6 @@ public class Goods implements Serializable {
         return price;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
     public String getIntroduce() {
         return introduce;
     }
@@ -66,10 +65,6 @@ public class Goods implements Serializable {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
     }
 
     public void setIntroduce(String introduce) {

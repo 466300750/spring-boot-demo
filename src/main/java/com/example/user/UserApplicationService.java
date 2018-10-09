@@ -14,18 +14,13 @@ public class UserApplicationService {
     }
 
     @Transactional
-    public Long saveUser(User user) {
-        return userService.saveUser(user);
+    public void saveUser(User user) {
+        userService.saveUser(user);
     }
 
     @Transactional
-    public void deleteUser(Long id) {
+    public void deleteUser(long id) {
         userService.deleteUser(id);
-    }
-
-    @Transactional
-    public void updateUser(User user) {
-        userService.updateUser(user);
     }
 
     @Transactional

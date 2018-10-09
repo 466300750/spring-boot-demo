@@ -9,7 +9,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.NegatedRequestMatcher;
-import org.springframework.security.web.util.matcher.OrRequestMatcher;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -26,7 +25,7 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
 
     public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
-        super(new NegatedRequestMatcher(new OrRequestMatcher(new AntPathRequestMatcher("/login"), new AntPathRequestMatcher("/error"))));
+        super(new NegatedRequestMatcher(new AntPathRequestMatcher("/login", "POST")));
         setAuthenticationManager(authenticationManager);
     }
 

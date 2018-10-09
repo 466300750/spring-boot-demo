@@ -1,20 +1,51 @@
 package com.example.user;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-public interface UserService {
-    long saveUser(User user);
+public class UserService {
 
-    long updateUser(User user);
+    private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
 
-    void deleteUser(Long id);
+    @Autowired
+    public UserService(UserRepository userRepository,
+                       PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
-    User getUser(Long id);
+    @Transactional
+    public void saveUser(User user) {
+        String account = user.getAccount();
+        User userByAccount = getUserByAccount(account);
+        if (userByAccount == null) {
+            String password = user.getPassword();
+            user.setPassword(passwordEncoder.encode(password).trim());
+            userRepository.save(user);
+        } else {
+            throw new RuntimeException("user already exist in system");
+        }
+    }
 
-    User getUserByAccount(String account);
+    public void deleteUser(long id) {
+        userRepository.deleteById(id);
+    }
 
-    List<User> listUser();
+    public User getUser(long id) {
+        return userRepository.findUserById(id);
+    }
+
+    public User getUserByAccount(String account) {
+        return userRepository.findByAccount(account);
+    }
+
+    public List<User> listUser() {
+        return userRepository.findAll();
+    }
 }

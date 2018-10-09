@@ -14,8 +14,11 @@ public class GoodsCategory {
     /* 类别名字 */
     private String name;
 
-    public GoodsCategory() {
+    public GoodsCategory(String name) {
+        this.name = name;
+    }
 
+    public GoodsCategory() {
     }
 
     public Long getId() {

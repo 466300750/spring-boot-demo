@@ -1,54 +1,46 @@
 package com.example.goods;
 
 
-import com.example.Result;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/goods")
 public class GoodsController {
-    private GoodsService goodsService;
+    private GoodsApplicationService goodsApplicationService;
 
-    @Autowired
-    public GoodsController(GoodsService goodsService) {
-        this.goodsService = goodsService;
+    public GoodsController(GoodsApplicationService goodsApplicationService) {
+        this.goodsApplicationService = goodsApplicationService;
     }
 
     @RequestMapping(method = RequestMethod.POST)
     @PreAuthorize(value = "hasRole('ADMIN')")
-    public Result<String> addGoods(@RequestBody Goods goods) {
-        goodsService.saveGoods(goods);
-        return new Result<>(200, "success", null);
+    public long addGoods(@RequestBody Goods goods) {
+        return goodsApplicationService.saveGoods(goods);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @PreAuthorize(value = "hasRole('ADMIN')")
-    public Result<String> deleteGoods(@PathVariable Long id) {
-        goodsService.deleteGoods(id);
-        return new Result<>(200, "success", null);
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    @PreAuthorize(value = "hasRole('ADMIN')")
-    public Result<String> updateGoods(@RequestBody Goods goods) {
-        goodsService.updateGoods(goods);
-        return new Result<>(200, "success", null);
+    public void deleteGoods(@PathVariable Long id) {
+        goodsApplicationService.deleteGoods(id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @PreAuthorize(value = "hasAnyRole('ADMIN','USER')")
-    public Result<Goods> getGoods(@PathVariable Long id) {
-        return new Result<>(200, "success", goodsService.getGoods(id));
+    public Goods getGoods(@PathVariable Long id) {
+        return goodsApplicationService.byId(id);
     }
 
     @RequestMapping(method = RequestMethod.GET)
     @PreAuthorize(value = "hasAnyRole('ADMIN','USER')")
-    public Result<List<Goods>> getGoods() {
-        return new Result<>(200, "success", goodsService.listGoods());
+    public List<Goods> getGoods() {
+        return goodsApplicationService.goodsList();
     }
 
 }

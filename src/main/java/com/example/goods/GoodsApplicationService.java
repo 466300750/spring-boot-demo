@@ -6,40 +6,31 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class GoodsServiceImpl implements GoodsService {
+public class GoodsApplicationService {
 
     private GoodsRepository goodsRepository;
     private GoodsCategoryRepository goodsCategoryRepository;
 
     @Autowired
-    public GoodsServiceImpl(GoodsRepository goodsRepository, GoodsCategoryRepository goodsCategoryRepository) {
+    public GoodsApplicationService(GoodsRepository goodsRepository, GoodsCategoryRepository goodsCategoryRepository) {
         this.goodsRepository = goodsRepository;
         this.goodsCategoryRepository = goodsCategoryRepository;
     }
 
 
-    @Override
-    public void saveGoods(Goods goods) {
-        goodsRepository.save(goods);
+    public long saveGoods(Goods goods) {
+        return goodsRepository.save(goods).getId();
     }
 
-    @Override
-    public void updateGoods(Goods goods) {
-        goodsRepository.save(goods);
-    }
-
-    @Override
     public void deleteGoods(Long id) {
         goodsRepository.deleteById(id);
     }
 
-    @Override
-    public Goods getGoods(Long id) {
+    public Goods byId(Long id) {
         return goodsRepository.getOne(id);
     }
 
-    @Override
-    public List<Goods> listGoods() {
+    public List<Goods> goodsList() {
         return goodsRepository.findAll();
     }
 

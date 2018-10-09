@@ -1,10 +1,11 @@
 package com.example.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -14,56 +15,31 @@ public class UserController {
 
     private UserApplicationService applicationService;
 
-    @Autowired
     public UserController(UserApplicationService applicationService) {
         this.applicationService = applicationService;
     }
 
-
-    /// @RequestBody用作application/json或者是application/xml等
-    /// 不加@RequestBody form-data,x-www-form-urlencoded等。
-    ///
-    ///
-    //
     @RequestMapping(method = RequestMethod.POST)
     @PreAuthorize(value = "hasRole('ADMIN')")
-    public ResponseEntity<Long> addUser(@RequestBody User user) {
-        Long id = applicationService.saveUser(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(id);
+    public void addUser(@RequestBody User user) {
+        applicationService.saveUser(user);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @PreAuthorize(value = "hasRole('ADMIN')")
-    public ResponseEntity<Void> deleteUser(@PathVariable("id") Long id) {
+    public void deleteUser(@PathVariable("id") long id) {
         applicationService.deleteUser(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    @PreAuthorize(value = "hasAnyRole('ADMIN','USER')")
-    public ResponseEntity<Void> updateUser(@RequestBody User user) {
-        applicationService.updateUser(user);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @PreAuthorize(value = "hasRole('ADMIN')")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public User getUser(@PathVariable("id") Long id) {
-        User userById = applicationService.getUser(id);
-        if (userById == null) {
-            return null;
-        }
-        return userById;
+    public User getUser(@PathVariable("id") long id) {
+        return applicationService.getUser(id);
     }
 
-    // 数据库里需要定义成ROLE_USER
     @RequestMapping(method = RequestMethod.GET)
     @PreAuthorize(value = "hasRole('ADMIN')")
-    public ResponseEntity<List<User>> getUser() {
-        List<User> users = applicationService.getUserList();
-        if (users == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        return ResponseEntity.ok(users);
+    public List<User> getUser() {
+        return applicationService.getUserList();
     }
 }

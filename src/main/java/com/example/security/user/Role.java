@@ -1,6 +1,10 @@
 package com.example.security.user;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
@@ -15,6 +19,11 @@ public class Role implements Serializable {
 
     public Role() {
 
+    }
+
+    public Role(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public static long getSerialVersionUID() {

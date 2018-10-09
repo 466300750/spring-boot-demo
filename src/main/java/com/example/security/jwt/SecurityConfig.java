@@ -32,31 +32,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf()
-                .disable()
-                .authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .antMatchers("/error").permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .exceptionHandling()
-                .authenticationEntryPoint(unauthorizedHandler)
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-        JwtAuthenticationFilter filter = new JwtAuthenticationFilter(this.authenticationManager());
-        http.addFilterAfter(filter, UsernamePasswordAuthenticationFilter.class);
-
+            .csrf()
+            .disable()
+            .authorizeRequests()
+            .antMatchers("/login").permitAll()
+            .anyRequest()
+            .authenticated()
+            .and()
+            .addFilterBefore(new JwtAuthenticationFilter(this.authenticationManager()), UsernamePasswordAuthenticationFilter.class)
+            .exceptionHandling()
+            .authenticationEntryPoint(unauthorizedHandler)
+            .and()
+            .sessionManagement()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .authenticationProvider(jwtAuthenticationProvider)
-                .userDetailsService(myUserDetailService)
-                .passwordEncoder(passwordEncoder());
+            .authenticationProvider(jwtAuthenticationProvider)
+            .userDetailsService(myUserDetailService)
+            .passwordEncoder(passwordEncoder());
     }
 
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)

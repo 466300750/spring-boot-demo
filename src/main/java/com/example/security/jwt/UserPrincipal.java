@@ -1,31 +1,41 @@
 package com.example.security.jwt;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserPrincipal implements UserDetails {
 
     private long id;
+
     private String account;
+
+    private List<String> roles;
+
+    @JsonIgnore
     private String password;
-    private String role;
+
     private Collection<? extends GrantedAuthority> authorities;
 
 
-    public UserPrincipal(long id, String account, String role) {
+    public UserPrincipal(long id, String account, List<String> roles) {
         this.id = id;
         this.account = account;
-        this.role = role;
+        this.roles = roles;
     }
 
-    public UserPrincipal(long id, String account, String password, String role, Collection<? extends GrantedAuthority> authorities) {
+    public UserPrincipal(long id, String account, String password, List<String> roles) {
         this.id = id;
         this.account = account;
+        this.roles = roles;
         this.password = password;
-        this.role = role;
-        this.authorities = authorities;
+        this.roles = roles;
+        this.authorities = roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
     }
 
     @Override
@@ -47,12 +57,8 @@ public class UserPrincipal implements UserDetails {
         return id;
     }
 
-    public String getAccount() {
-        return account;
-    }
-
-    public String getRole() {
-        return role;
+    public List<String> getRoles() {
+        return roles;
     }
 
     @Override

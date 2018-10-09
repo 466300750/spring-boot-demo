@@ -4,7 +4,16 @@ package com.example.user;
 import com.example.security.user.Role;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import java.io.Serializable;
 import java.util.List;
 
@@ -14,18 +23,17 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     @Column(nullable = false, name = "account")
     private String account;
     @Column(nullable = false, name = "password")
     private String password;
-    @Column(nullable = false, name = "realname")
-    private String realname;
+    @Column(nullable = false, name = "name")
+    private String name;
     @Column(nullable = false, name = "email")
     private String email;
     @Column(nullable = false, name = "phone")
     private String phone;
-
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(name = "user_in_role", joinColumns = {@JoinColumn(name = "uid", referencedColumnName = "id")}
@@ -33,7 +41,6 @@ public class User implements Serializable {
     private List<Role> roles;
 
     public User() {
-
     }
 
     public String getAccount() {
@@ -44,8 +51,8 @@ public class User implements Serializable {
         return password;
     }
 
-    public String getRealname() {
-        return realname;
+    public String getName() {
+        return name;
     }
 
     public Long getId() {
@@ -84,8 +91,8 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setId(Long id) {
@@ -94,21 +101,5 @@ public class User implements Serializable {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null)
-            return false;
-        if (obj instanceof User) {
-            User user = (User) obj;
-            return account.equals(user.getAccount());
-        }
-        return false;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 }

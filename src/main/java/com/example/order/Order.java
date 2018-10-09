@@ -4,13 +4,19 @@ package com.example.order;
 import com.example.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
-public class Orders implements Serializable {
+public class Order implements Serializable {
     private static final long serialVersionUID = 4L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +39,7 @@ public class Orders implements Serializable {
     @JoinColumn(nullable = false, name = "oid")
     private List<OrderItem> list;
 
-    public Orders() {
+    public Order() {
 
     }
 

@@ -12,11 +12,13 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.web.context.request.RequestContextHolder.getRequestAttributes;
 
@@ -31,7 +33,7 @@ public class JwtTokenService implements Serializable {
         Date expirationDate = new Date(System.currentTimeMillis() + 5000 * 60 * 60);
         Claims claims = Jwts.claims().setSubject(String.valueOf(userPrincipal.getId()));
         claims.put("NAME", userPrincipal.getUsername());
-        claims.put("SCOPES", userPrincipal.getRole());
+        claims.put("SCOPES", userPrincipal.getRoles().stream().collect(joining(",")));
 
         SecretKey key = new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
         String tokenString = Jwts
@@ -53,9 +55,8 @@ public class JwtTokenService implements Serializable {
 
     public JwtAuthenticationToken from(String jwtToken) {
         Claims claims = getClaimsFromToken(jwtToken);
-        String role = (String) claims.get("SCOPES");
-        List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-        grantedAuthorities.add(new SimpleGrantedAuthority(role));
+        List<String> role = Arrays.stream(claims.get("SCOPES", String.class).split(",")).collect(toList());
+        List<GrantedAuthority> grantedAuthorities = role.stream().map(it -> new SimpleGrantedAuthority("ROLE_" + it)).collect(toList());
         UserPrincipal user = new UserPrincipal(Long.valueOf(claims.getSubject()), String.valueOf(claims.get("NAME")), role);
         JwtAuthenticationToken token = new JwtAuthenticationToken(user, null, grantedAuthorities);
         token.setAuthenticated(true);
