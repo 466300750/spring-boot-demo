@@ -16,7 +16,6 @@ insert into user_in_role (uid, rid) values (2,2);
 insert into user_in_role (uid, rid) values (3,2);
 
 insert into orders (uid, payment, address, status) values ('1',1000,'address1',0);
-insert into orders (uid, payment, address, status) values ('1',3000,'address1',0);
 
 insert into order_item(oid,gid,num) values (1,1,10);
 insert into order_item(oid,gid,num) values (1,2,15);

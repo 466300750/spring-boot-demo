@@ -1,0 +1,100 @@
+2018-10-18 11:53:01,669 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1623$.
+2018-10-18 11:53:01,669 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 963$.
+2018-10-18 11:53:01,669 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 828$.
+2018-10-18 11:53:02,189 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 828$ completed successfully ? true.
+2018-10-18 11:53:02,189 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 512$.
+2018-10-18 11:53:02,261 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 963$ completed successfully ? true.
+2018-10-18 11:53:02,262 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1033$.
+2018-10-18 11:53:02,591 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1623$ completed successfully ? true.
+2018-10-18 11:53:02,591 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1130$.
+2018-10-18 11:53:02,994 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 512$ completed successfully ? true.
+2018-10-18 11:53:02,995 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1648$.
+2018-10-18 11:53:03,076 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1033$ completed successfully ? false.
+2018-10-18 11:53:03,077 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1806$.
+2018-10-18 11:53:03,236 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1130$ completed successfully ? false.
+2018-10-18 11:53:03,237 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1221$.
+2018-10-18 11:53:03,724 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1806$ completed successfully ? true.
+2018-10-18 11:53:03,726 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1611$.
+2018-10-18 11:53:03,753 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1648$ completed successfully ? true.
+2018-10-18 11:53:03,965 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1221$ completed successfully ? false.
+2018-10-18 11:53:04,259 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1611$ completed successfully ? true.
+2018-10-18 14:12:42,429 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1275$.
+2018-10-18 14:12:42,429 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1814$.
+2018-10-18 14:12:42,429 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1203$.
+2018-10-18 14:12:43,270 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1203$ completed successfully ? true.
+2018-10-18 14:12:43,270 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 574$.
+2018-10-18 14:12:43,327 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1275$ completed successfully ? true.
+2018-10-18 14:12:43,328 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1404$.
+2018-10-18 14:12:43,386 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1814$ completed successfully ? false.
+2018-10-18 14:12:43,387 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1755$.
+2018-10-18 14:12:43,928 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1404$ completed successfully ? true.
+2018-10-18 14:12:43,929 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1132$.
+2018-10-18 14:12:43,932 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1755$ completed successfully ? true.
+2018-10-18 14:12:43,933 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1824$.
+2018-10-18 14:12:44,079 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 574$ completed successfully ? true.
+2018-10-18 14:12:44,080 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1645$.
+2018-10-18 14:12:44,795 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1132$ completed successfully ? false.
+2018-10-18 14:12:44,799 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1882$.
+2018-10-18 14:12:44,825 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1824$ completed successfully ? true.
+2018-10-18 14:12:44,844 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1645$ completed successfully ? true.
+2018-10-18 14:12:45,578 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1882$ completed successfully ? false.
+2018-10-18 14:13:16,053 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1676$.
+2018-10-18 14:13:16,053 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1168$.
+2018-10-18 14:13:16,053 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1437$.
+2018-10-18 14:13:16,858 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1437$ completed successfully ? false.
+2018-10-18 14:13:16,859 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1779$.
+2018-10-18 14:13:16,890 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1168$ completed successfully ? true.
+2018-10-18 14:13:16,891 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1884$.
+2018-10-18 14:13:16,908 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1676$ completed successfully ? false.
+2018-10-18 14:13:16,908 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1091$.
+2018-10-18 14:13:17,409 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1779$ completed successfully ? true.
+2018-10-18 14:13:17,409 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 859$.
+2018-10-18 14:13:17,447 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1884$ completed successfully ? true.
+2018-10-18 14:13:17,448 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1403$.
+2018-10-18 14:13:17,772 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1091$ completed successfully ? true.
+2018-10-18 14:13:17,773 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1356$.
+2018-10-18 14:13:17,954 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 859$ completed successfully ? false.
+2018-10-18 14:13:17,957 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1516$.
+2018-10-18 14:13:18,109 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1403$ completed successfully ? true.
+2018-10-18 14:13:18,326 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1356$ completed successfully ? false.
+2018-10-18 14:13:18,490 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1516$ completed successfully ? false.
+2018-10-18 14:13:34,317 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1813$.
+2018-10-18 14:13:34,317 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1986$.
+2018-10-18 14:13:34,317 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 762$.
+2018-10-18 14:13:34,936 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1813$ completed successfully ? true.
+2018-10-18 14:13:34,936 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1881$.
+2018-10-18 14:13:35,014 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 762$ completed successfully ? true.
+2018-10-18 14:13:35,015 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1646$.
+2018-10-18 14:13:35,308 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1986$ completed successfully ? true.
+2018-10-18 14:13:35,308 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 943$.
+2018-10-18 14:13:35,574 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1881$ completed successfully ? true.
+2018-10-18 14:13:35,575 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 659$.
+2018-10-18 14:13:35,922 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1646$ completed successfully ? true.
+2018-10-18 14:13:35,922 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1381$.
+2018-10-18 14:13:36,244 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 659$ completed successfully ? false.
+2018-10-18 14:13:36,244 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1310$.
+2018-10-18 14:13:36,306 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 943$ completed successfully ? true.
+2018-10-18 14:13:36,309 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1421$.
+2018-10-18 14:13:36,876 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1381$ completed successfully ? true.
+2018-10-18 14:13:37,202 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1310$ completed successfully ? false.
+2018-10-18 14:13:37,308 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1421$ completed successfully ? false.
+2018-10-18 14:13:41,834 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1945$.
+2018-10-18 14:13:41,834 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1256$.
+2018-10-18 14:13:41,834 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1810$.
+2018-10-18 14:13:42,499 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1256$ completed successfully ? true.
+2018-10-18 14:13:42,500 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1717$.
+2018-10-18 14:13:42,508 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1810$ completed successfully ? false.
+2018-10-18 14:13:42,508 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1985$.
+2018-10-18 14:13:42,579 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1945$ completed successfully ? true.
+2018-10-18 14:13:42,580 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 539$.
+2018-10-18 14:13:43,024 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1985$ completed successfully ? true.
+2018-10-18 14:13:43,025 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1742$.
+2018-10-18 14:13:43,319 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1717$ completed successfully ? false.
+2018-10-18 14:13:43,319 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1421$.
+2018-10-18 14:13:43,372 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 539$ completed successfully ? true.
+2018-10-18 14:13:43,373 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1645$.
+2018-10-18 14:13:43,974 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1421$ completed successfully ? false.
+2018-10-18 14:13:43,977 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:13) - Preparing to transfer 1580$.
+2018-10-18 14:13:43,993 +0800 [pool-1-thread-3] INFO  (Log4JTransferService.java:18) - Has transfer of 1742$ completed successfully ? true.
+2018-10-18 14:13:44,081 +0800 [pool-1-thread-1] INFO  (Log4JTransferService.java:18) - Has transfer of 1645$ completed successfully ? true.
+2018-10-18 14:13:44,680 +0800 [pool-1-thread-2] INFO  (Log4JTransferService.java:18) - Has transfer of 1580$ completed successfully ? true.

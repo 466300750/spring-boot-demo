@@ -1,6 +1,5 @@
 package com.example.goods;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,11 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/good-category")
+@RequestMapping("/goods-category")
 public class GoodsCategoryController {
-    @Autowired
+
     private GoodsCategoryApplicationService goodsCategoryApplicationService;
 
+    public GoodsCategoryController(GoodsCategoryApplicationService goodsCategoryApplicationService) {
+        this.goodsCategoryApplicationService = goodsCategoryApplicationService;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     @PreAuthorize("hasRole('ADMIN')")

@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -14,17 +14,13 @@ public class Goods implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    /* 商品名称 */
+    private long id;
     private String name;
-    /* 商品价格 */
     private BigDecimal price;
-    /* 商品描述 */
     private String introduce;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(nullable = false, name = "category_id")
-    /* 商品类别*/
     private GoodsCategory goodsCategory;
 
     public Goods() {

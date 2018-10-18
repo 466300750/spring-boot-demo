@@ -3,18 +3,23 @@ package com.example.goods;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
 @Entity
 public class GoodsCategory {
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    /* 类别名字 */
     private String name;
 
     public GoodsCategory(String name) {
+        this.name = name;
+    }
+
+    public GoodsCategory(long id, String name) {
+        this.id = id;
         this.name = name;
     }
 

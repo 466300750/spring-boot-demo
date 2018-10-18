@@ -9,35 +9,30 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
+@Table(name = "orders")
 public class Order implements Serializable {
     private static final long serialVersionUID = 4L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @JsonIgnore
     @OneToOne
     @JoinColumn(nullable = false, name = "uid")
     private User user;
-    /* 订单花费 */
+
     private BigDecimal payment;
-    /* 邮费 */
-    private BigDecimal post_fee;
-    /* 地址 */
+
     private String address;
+
     /* 订单状态 0-出库中，1-配送中，2-已签收,3-已拒收,4-申请退款中，5-申请退货中,6-完成 */
     private short status;
-
-    @OneToMany
-    @JoinColumn(nullable = false, name = "oid")
-    private List<OrderItem> list;
 
     public Order() {
 
@@ -47,7 +42,7 @@ public class Order implements Serializable {
         return serialVersionUID;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
@@ -59,23 +54,15 @@ public class Order implements Serializable {
         return payment;
     }
 
-    public BigDecimal getPost_fee() {
-        return post_fee;
-    }
-
     public String getAddress() {
         return address;
     }
 
-    public short getStutas() {
+    public short getStatus() {
         return status;
     }
 
-    public List<OrderItem> getList() {
-        return list;
-    }
-
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -87,10 +74,6 @@ public class Order implements Serializable {
         this.payment = payment;
     }
 
-    public void setPost_fee(BigDecimal post_fee) {
-        this.post_fee = post_fee;
-    }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -99,8 +82,5 @@ public class Order implements Serializable {
         this.status = stutas;
     }
 
-    public void setList(List<OrderItem> list) {
-        this.list = list;
-    }
 }
 

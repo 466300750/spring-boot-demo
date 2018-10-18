@@ -1,9 +1,13 @@
 package com.example.order;
 
 import com.example.goods.Goods;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import java.io.Serializable;
 
 @Entity
@@ -11,19 +15,25 @@ public class OrderItem implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JsonIgnore
-    @Column(nullable = false, name = "oid", insertable = false, updatable = false)
+
+//    @JsonIgnore
+//    @Column(nullable = false, name = "oid", insertable = false, updatable = false)
     private long oid;
-    /* 数量 */
+
     private int num;
-    /* 成交价 */
-    private double price;
+
     @OneToOne
     @JoinColumn(nullable = false, name = "gid")
     private Goods goods;
 
     public OrderItem() {
 
+    }
+
+    public OrderItem(long oid, int num, Goods goods) {
+        this.oid = oid;
+        this.num = num;
+        this.goods = goods;
     }
 
     public Long getId() {
@@ -36,10 +46,6 @@ public class OrderItem implements Serializable {
 
     public int getNum() {
         return num;
-    }
-
-    public double getPrice() {
-        return price;
     }
 
     public Goods getGoods() {
@@ -56,10 +62,6 @@ public class OrderItem implements Serializable {
 
     public void setNum(int num) {
         this.num = num;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public void setGoods(Goods goods) {

@@ -25,16 +25,6 @@ public class GoodsCategoryApplicationService {
     }
 
     @Transactional
-    public void updateGoodsCategory(GoodsCategory goodsCategory) {
-        goodsCategoryRepository.save(goodsCategory);
-    }
-
-    @Transactional
-    public GoodsCategory getGoodsCategory(Long id) {
-        return goodsCategoryRepository.getOne(id);
-    }
-
-    @Transactional
     public List<GoodsCategory> listGoodsCategory() {
         return goodsCategoryRepository.findAll();
     }
